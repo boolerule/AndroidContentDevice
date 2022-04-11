@@ -13,6 +13,7 @@ android {
 	!qdep_build: EXTRA_TRANSLATIONS += $$QDEP_TRANSLATIONS
 	
 	INCLUDEPATH += $$PWD
+        message("AndroidContentDevice")
 }
 
 QDEP_PACKAGE_EXPORTS += Q_ANDROID_CONTENT_DEVICE_EXPORT

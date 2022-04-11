@@ -1,4 +1,6 @@
 #include "contentdevice.h"
+#ifdef Q_OS_ANDROID
+
 #include <QtAndroidExtras/QtAndroid>
 
 #define TEST_OPEN_VALID(env) do { \
@@ -123,6 +125,11 @@ QUrl ContentDevice::url() const
 	return _url;
 }
 
+qint64 ContentDevice::size() const
+{
+    return QIODevice::size();
+}
+
 void ContentDevice::setUrl(QUrl url)
 {
 	if (_url == url)
@@ -166,3 +173,4 @@ bool ContentDevice::checkJniError(QAndroidJniEnvironment &env)
 	} else
 		return false;
 }
+#endif //#ifdef Q_OS_ANDROID
