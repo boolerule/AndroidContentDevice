@@ -120,7 +120,7 @@ void ContentDevice::flush()
 		_stream.callMethod<void>("flush");
 }
 
-QUrl ContentDevice::url() const
+QUrl ContentDevice::fileName() const
 {
 	return _url;
 }
@@ -130,13 +130,13 @@ qint64 ContentDevice::size() const
     return QIODevice::size();
 }
 
-void ContentDevice::setUrl(QUrl url)
+void ContentDevice::setFileName(QUrl url)
 {
 	if (_url == url)
 		return;
 
 	_url = url;
-	emit urlChanged(url);
+    emit fileNameChanged(url);
 }
 
 qint64 ContentDevice::readData(char *data, qint64 maxlen)
@@ -173,4 +173,6 @@ bool ContentDevice::checkJniError(QAndroidJniEnvironment &env)
 	} else
 		return false;
 }
+
+#else
 #endif //#ifdef Q_OS_ANDROID
