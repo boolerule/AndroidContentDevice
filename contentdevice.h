@@ -1,4 +1,4 @@
-#ifndef CONTENTDEVICE_H
+﻿#ifndef CONTENTDEVICE_H
 #define CONTENTDEVICE_H
 #include <qglobal.h>
 
@@ -9,7 +9,7 @@
 #include <QtAndroidExtras/QAndroidJniObject>
 #include <QtAndroidExtras/QAndroidJniEnvironment>
 
-class Q_ANDROID_CONTENT_DEVICE_EXPORT ContentDevice : public QIODevice
+class ContentDevice : public QIODevice
 {
 	Q_OBJECT
 
